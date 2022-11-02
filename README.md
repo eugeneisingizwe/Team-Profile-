@@ -12,7 +12,7 @@
 
 
 ## URL of Github Repo 
-
+https://github.com/eugeneisingizwe/Team-Profile-
 
 ## Mock-Up
 
