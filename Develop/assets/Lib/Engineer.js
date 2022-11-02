@@ -1,5 +1,5 @@
 //engineer contructor
-const Employee = require("./Employee.js");
+const Employee = require("./Employee");
 
 
 class Engineer extends Employee{

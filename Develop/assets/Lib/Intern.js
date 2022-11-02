@@ -1,6 +1,6 @@
 //imoport contructor for Employee
 
-const Employee = require("./Employee.js");
+const Employee = require("./Employee");
 
 //extend intern constructor to employee constructor 
 

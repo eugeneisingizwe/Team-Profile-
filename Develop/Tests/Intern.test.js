@@ -1,12 +1,13 @@
 //import intern constructor
 
-const Intern = require("../Develop/assets/Lib/Intern");
+const Intern = require("../assets/Lib/Intern");
 
 //create an employee object 
 
 describe("Intern", () => {
-it("It should do something", () => {
-    expect("expect that something to happen")
+it("It should be an object", () => {
+    const intern = new Intern()
+    expect(typeof (intern)).toBe("object")
 
 })
 });

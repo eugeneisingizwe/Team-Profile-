@@ -1,12 +1,13 @@
 //import engineer constructor
 
-const Engineer = require("../Develop/assets/Lib/Engineer");
+const Engineer = require("../assets/Lib/Engineer");
 
-//create an employee object 
+//create an engineer object 
 
 describe("Engineer", () => {
-it("It should do something", () => {
-    expect("expect that something to happen")
+it("It should be an object", () => {
+    const engineer = new Engineer()
+    expect(typeof (engineer)).toBe("object")
 
 })
 });
