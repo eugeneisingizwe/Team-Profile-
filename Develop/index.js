@@ -103,6 +103,8 @@ const managerInput = () => {
         })
 };
 
+//prompt to add engineer and intern to the team 
+
 const engineerInternInPut = () => {
     console.log("Adding an engineer or intern to the team");
 
@@ -189,6 +191,8 @@ const engineerInternInPut = () => {
                 }
             }
         },
+
+        // Option to add more memebers to the team 
         {
             type: "confrim",
             name: "confirmTeamMemberIsAdded",
