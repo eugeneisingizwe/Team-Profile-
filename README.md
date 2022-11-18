@@ -11,20 +11,36 @@
 - In this project I leaned how to use constructors, run tests, and utilize classes and subclasses. 
 
 
-## URL of Github Repo 
+## Installation 
+```
+npm i inquirer
+```
+
+## Usage 
+Once all the packages have been onstalled, run the following commend in the termianl:
+```
+node index.js
+
+```
+
+
+## Links 
+
+https://drive.google.com/file/d/1s9L2zryxVGlj4cFPilu1DRgQoG8T5uBw/view
+
 https://github.com/eugeneisingizwe/Team-Profile-
 
-## Mock-Up
 
-![screenshoot of the created HTML page](./Develop/assets/image/screenshot.png)
 
 
 ## User Story
-AS A manager
+```AS A manager
 I WANT to generate a webpage that displays my team's basic info
 SO THAT I have quick access to their emails and GitHub profiles
+```
 
 ## Acceptance Criteria 
+```
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for my team members and their information
 THEN an HTML file is generated that displays a nicely formatted team roster based on user input
@@ -42,3 +58,11 @@ WHEN I select the intern option
 THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
 WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
+```
+
+## Mock-Up
+
+![screenshoot of the created HTML page](./Develop/assets/image/screenshot.png)
+
+## Credits 
+© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
