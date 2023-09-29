@@ -1,4 +1,9 @@
 header{
-    background-color: red;
+    background-color: darkgray;
     color: white;
+}
+
+.card-header {
+ background-color: lightseagreen;
+ color: black;
 }

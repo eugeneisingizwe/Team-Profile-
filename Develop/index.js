@@ -29,9 +29,9 @@ const managerInput = () => {
             {
                 type: "input",
                 name: "name",
-                message: "What is the manager's name?",
-                validate: managernameInput => {
-                    if (managernameInput) {
+                message: "Who is the manager of this team?",
+                validate: managerNameInput => {
+                    if (managerNameInput) {
                         return true;
                     } else {
                         console.log("please enter the team's manager name!");
@@ -48,11 +48,11 @@ const managerInput = () => {
                 type: "input",
                 message: "Please enter manager id number!",
                 validate: managerIdInput => {
-                    if (managerIdInput) {
-                        return true;
-                    } else {
-                        console.log("please enter the correct id number!");
+                    if (isNaN(managerIdInput)) {
+                        console.log("Please enter manager's id number")
                         return false;
+                    } else {
+                        return true;
                     }
 
                 }
@@ -65,7 +65,8 @@ const managerInput = () => {
                 type: "input",
                 message: "Please enter manager's email!",
                 validate: managerEmail =>{
-                    if(managerEmail){
+                    valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(managerEmail)
+                    if(valid){
                         return true;
                     } else {
                         console.log("Please eneter the manager's email!");
@@ -77,14 +78,15 @@ const managerInput = () => {
             },
 
             {
-                name: "officeNumber",
                 type: "input",
-                message: "Please enter manager's office number!",
+                name: "officeNumber",
+                message: "Please enter manager's office number",
                 validate: managerofficeNumberInput => {
-                    if (managerofficeNumberInput) {
-                        return true;
-                    } else {
+                    if (isNaN(managerofficeNumberInput)) {
+                        console.log("Please enter manager's office number!")
                         return false;
+                    } else {
+                        return true;
                     }
 
                 }
@@ -112,8 +114,8 @@ const engineerInternInPut = () => {
         .prompt([{
 
             type: "list",
-            name: "option",
-            message: "Add an Engineer or Intern to the team!",
+            name: "role",
+            message: "Please choose your team member role",
             choices: ["Engineer", "Intern"]
         },
 
@@ -125,7 +127,7 @@ const engineerInternInPut = () => {
                 if (teamMemberNameInput) {
                     return true;
                 } else {
-                    console.log("Please enter the name of the team memebr!");
+                    console.log("Please enter the name of your team memebr!");
                     return false;
                 }
             }
@@ -137,10 +139,10 @@ const engineerInternInPut = () => {
             name: "id",
             message: "What is the team member id?",
             validate: teamMemberIdInput => {
-                if (teamMemberIdInput) {
-                    return true;
+                if (isNaN(teamMemberIdInput)) {
+                    console.log("Please enter the team member id")
+                    return false;
                 } else {
-                    console.log("Please enter team memeber id!");
                     return true;
                 }
             }
@@ -152,7 +154,8 @@ const engineerInternInPut = () => {
             message: "Please enter the team memeber email!",
             name: "email",
             validate: teamMemberEmail => {
-                if (teamMemberEmail) {
+                valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(teamMemberEmail)
+                if (valid) {
                     return true;
                 } else {
                     console.log("please enter the team member email!");
@@ -167,8 +170,8 @@ const engineerInternInPut = () => {
         {
             type: "input",
             name: "github",
-            message: "What is the engineer github username?",
-            when: (input) => input.option = "Engineer",
+            message: "What is the team memeber github username?",
+            when: (input) => input.role === "Engineer",
             validate: engineerGithub => {
                 if (engineerGithub) {
                     return true;
@@ -182,7 +185,7 @@ const engineerInternInPut = () => {
             type: "input",
             name: "school",
             message: "What is the intern school?",
-            when: (input) => input.option = "Intern",
+            when: (input) => input.role === "Intern",
             validate: internSchool => {
                 if (internSchool) {
                     return true;
@@ -194,23 +197,24 @@ const engineerInternInPut = () => {
 
         // Option to add more memebers to the team 
         {
-            type: "confrim",
+            type: "confirm",
             name: "confirmTeamMemberIsAdded",
             message: "Would like to add more team members?",
+            default: false
           
         }
 
         ]).then((teamMemberAnswers) => {
-            const { name, id, email, github, option, school, confirmTeamMemberIsAdded} = teamMemberAnswers;
+            const { name, id, email, github, role, school, confirmTeamMemberIsAdded} = teamMemberAnswers;
             console.log(teamMemberAnswers);
 
             let teamMember; 
            
-            if(option === "Engineer"){
+            if(role === "Engineer"){
                 teamMember = new Engineer(name, id, email, github);
 
                 console.log(teamMember);
-            }else if(option === "Intern"){
+            }else if(role === "Intern"){
                 teamMember = new Intern(name, id, email, school);
 
                 console.log(teamMember);
@@ -218,7 +222,7 @@ const engineerInternInPut = () => {
 
             teamArr.push(teamMember);
 
-            if (confirmTeamMemberIsAdded === "yes"){
+            if (confirmTeamMemberIsAdded){
              return engineerInternInPut(teamArr);
             } else{
                 return teamArr;

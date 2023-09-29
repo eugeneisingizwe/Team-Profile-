@@ -13,25 +13,12 @@
 
 ## Installation 
 ```
-npm i inquirer
+The user should clone the repository from GitHub and download Node. This application also requires a file system and inquirer module. If testing is required, this application uses Jest.
 ```
 
 ## Usage 
-Once all the packages have been onstalled, run the following commend in the termianl:
-```
-node index.js
-
-```
-
-
-## Links 
-
-https://drive.google.com/file/d/1s9L2zryxVGlj4cFPilu1DRgQoG8T5uBw/view
-
-https://github.com/eugeneisingizwe/Team-Profile-
-
-
-
+https://drive.google.com/file/d/1sJwmKtHl9sqnZ6vZGYz1-QsRjdXu-3Yp/view
+![screenshoot of the created HTML page](./Develop/assets/image/_C__Users_eugen_bootcamp_gitlab_Team-Profile-_Develop_dist_index.html%20(2).png)
 
 ## User Story
 ```AS A manager
@@ -60,9 +47,10 @@ WHEN I decide to finish building my team
 THEN I exit the application, and the HTML is generated
 ```
 
-## Mock-Up
+## Contributing 
+Contributors should read the installation section.
 
-![screenshoot of the created HTML page](./Develop/assets/image/screenshot.png)
-
-## Credits 
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+## Tests
+Run npm test to run Jest for tests on constructors.
+## Questions
+If you have any questions about this projects, please contact me directly at eugeneisingizwe95@hotmail.com. You can view more of my projects at https://github.com/eugeneisingizwe.
