@@ -12,7 +12,7 @@ class Engineer extends Employee{
 
     }
         //retun github from the input
-        retunGitHub(){
+        returnGitHub(){
             return this.github;
             
         }

@@ -11,7 +11,7 @@ class Intern extends Employee {
         this.school = school;
     }
 
-    retunSchool(){
+    returnSchool(){
         return this.school;
     }
 

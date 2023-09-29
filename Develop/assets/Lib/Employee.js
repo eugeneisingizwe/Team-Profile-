@@ -8,7 +8,7 @@ class Employee {
 
     //return the name, id and emil 
 
-    retunName () {
+    returnName () {
         return this.name
     }
 
